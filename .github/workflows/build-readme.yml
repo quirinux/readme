@@ -11,9 +11,10 @@ jobs:
         run: make build
       - name: Building README.md
         run: make README.md
-      - name: Commit report
-        run: |
-          git config --local user.name 'Github Action'
-          git config --local user.email 'workflow@users.noreply.github.com'
-          git commit -am "Automated README.md"
-          git push
+      - uses: stefanzweifel/git-auto-commit-action@v4
+      # - name: Commit report
+        # run: |
+          # git config --local user.name 'Github Action'
+          # git config --local user.email 'workflow@users.noreply.github.com'
+          # git commit -am "Automated README.md"
+          # git push
