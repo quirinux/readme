@@ -3,8 +3,8 @@ name: Building Readme.me
 on: push
 jobs:
   build:
-    # runs-on: crystallang/crystal:latest
-    runs-on: ubuntu-latest
+    runs-on: crystallang/crystal:latest
+    # runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@master
       - name: Building self
