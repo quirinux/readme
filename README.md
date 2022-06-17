@@ -2,7 +2,7 @@
 readme is a cli tool to extract markdown text from source code files
 
 ## Motivation
-after trying some of doc builder tools I couldn't find anything that realy suits my needs, so decided to write my own
+After trying some of doc builder tools I couldn't find anything that realy suits my needs, so decided to write my own
 
 ## Goals:
 - be able to write doc block within source file
@@ -22,7 +22,7 @@ TODO: Write usage instructions here
 TODO: Write development instructions here
 
 ### TODO
-- [ ] having TODO/BUG/FIX dictionary would be nice to get more feature rich
+- [ ] having TODO/BUG/FIX dictionary would be nice to get it more feature rich
 
 ## Contributing
 
@@ -36,19 +36,19 @@ TODO: Write development instructions here
 
 - [QuirinuX](https://github.com/quirinux) - creator and maintainer
 
-## From now on this was generated using readme self :-)
+## The following was generated using readme self :-)
 
 
 
-### (src/main.cr)[src/main.cr]
+### [src/main.cr](src/main.cr)
 this is the project main file, where all the magic begins
 TODO: it'd be nice to have an exclude path/files flag
 
-### (src/readme.cr)[src/readme.cr]
+### [src/readme.cr](src/readme.cr)
 readme file processor
-TODO: add pattern filter
-TODO: add file type filter
-TODO: add user passed path instead of listing current
-TODO: add no-recursive option
-TODO: add output file redirection
+- TODO: add pattern filter
+- TODO: add file type filter
+- TODO: add user passed path instead of listing current
+- TODO: add no-recursive option
+- TODO: add output file redirection
 
