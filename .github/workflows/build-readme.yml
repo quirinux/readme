@@ -1,18 +1,13 @@
 ---
 name: Building Readme.me
-
-on:
-  push:
-    branches:
-      - "*"
-
+on: push
 jobs:
   build:
-    runs-on: crystallang/crystal:latest
-  steps:
-    - uses: actions/checkout@v3
-
-    - name: Building self
-      run: make build
-    - name: Building README.md
-      run: make README.md
+    # runs-on: crystallang/crystal:latest
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - name: Building self
+        run: make build
+      - name: Building README.md
+        run: make README.md
