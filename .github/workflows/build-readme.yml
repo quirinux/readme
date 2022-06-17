@@ -13,7 +13,7 @@ jobs:
         run: make README.md
       - name: Commit report
         run: |
-          git config --global user.name 'Github Action'
-          git config --global user.email 'workflow@users.noreply.github.com'
+          git config --local user.name 'Github Action'
+          git config --local user.email 'workflow@users.noreply.github.com'
           git commit -am "Automated README.md"
           git push
