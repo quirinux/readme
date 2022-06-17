@@ -1,10 +1,10 @@
 ---
-name: Building Readme.me
+name: Building README.md
 on: push
 jobs:
   build:
-    runs-on: crystallang/crystal:latest
-    # runs-on: ubuntu-latest
+    runs-on: ubuntu-latest
+    container: crystallang/crystal:latest
     steps:
       - uses: actions/checkout@master
       - name: Building self
