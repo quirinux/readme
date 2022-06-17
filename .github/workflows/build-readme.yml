@@ -1,0 +1,14 @@
+---
+name: Building Readme.me
+
+on:
+  push:
+    branches:
+      - "*"
+
+jobs:
+  build:
+    runs-on: crystallang/crystal:latest
+  steps:
+    - make build
+    - make README.md
