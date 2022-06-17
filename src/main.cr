@@ -1,4 +1,4 @@
-#> ### ({{ filename }})[{{ filename }}]
+#> ### [{{ filename }}]({{ filename }})
 #> this is the project main file, where all the magic begins
 
 require "option_parser"

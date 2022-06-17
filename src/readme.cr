@@ -1,4 +1,4 @@
-#> ### ({{ filename }})[{{ filename }}]
+#> ### [{{ filename }}]({{ filename }})
 #> readme file processor
 
 require "crinja"
@@ -48,15 +48,15 @@ module Readme
     end
 
     def list_files()
-      #> TODO: add pattern filter
-      #> TODO: add file type filter
-      #> TODO: add user passed path instead of listing current
-      #> TODO: add no-recursive option
+      #> - TODO: add pattern filter
+      #> - TODO: add file type filter
+      #> - TODO: add user passed path instead of listing current
+      #> - TODO: add no-recursive option
       @filelist = Dir["**/*"].reject{ |f| File.directory?(f) }
     end
 
     def render(filename, content)
-      #> TODO: add output file redirection
+      #> - TODO: add output file redirection
       puts Crinja.render(content, { filename: filename })
       puts ""
     end

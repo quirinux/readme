@@ -11,8 +11,7 @@ jobs:
         run: make build
       - name: Building README.md
         run: make README.md
-      - uses: stefanzweifel/git-auto-commit-action@v4
-      - name: Commit report
+      - name: Commit README.md
         run: |
           git config --global --add safe.directory /__w/readme/readme
           git config --global user.name 'Github Action'
