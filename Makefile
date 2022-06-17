@@ -11,5 +11,5 @@ build:
 	shards build --release
 
 README.md:
-	cat HEADER.me > README.md
+	cat HEADER.md > README.md
 	./bin/readme >> README.md
