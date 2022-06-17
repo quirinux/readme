@@ -10,5 +10,9 @@ jobs:
   build:
     runs-on: crystallang/crystal:latest
   steps:
-    - make build
-    - make README.md
+    - uses: actions/checkout@v3
+
+    - name: Building self
+      run: make build
+    - name: Building README.md
+      run: make README.md
