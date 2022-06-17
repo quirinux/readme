@@ -1,4 +1,4 @@
-
+.PHONY: README.md
 ARGS :=
 
 all:
@@ -6,3 +6,10 @@ all:
 
 run:
 	shards run -- ${ARGS}
+
+build:
+	shards build --release
+
+README.md:
+	cat HEADER.me > README.md
+	./bin/readme >> README.md
