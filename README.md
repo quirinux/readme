@@ -23,6 +23,7 @@ TODO: Write development instructions here
 
 ### TODO
 - [ ] having TODO/BUG/FIX dictionary would be nice to get it more feature rich
+- [ ] needs to improve template error handling
 
 ## Contributing
 
@@ -37,12 +38,13 @@ TODO: Write development instructions here
 - [QuirinuX](https://github.com/quirinux) - creator and maintainer
 
 ## The following was generated using readme itself :-)
+check out how it is done on [README.md.j2](README.md.j2)!
+---
 
 ## Table of Contents
-1. [src/main.cr](#src/main.cr)
-1. [src/readme.cr](#src/readme.cr)
+1. [src/main.cr](#srcmaincr)
+1. [src/readme.cr](#srcreadmecr)
 
----
 ### [src/main.cr](src/main.cr)
 this is the project main file, where all the magic begins
 TODO: it'd be nice to have an exclude path/files flag
