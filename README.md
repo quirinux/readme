@@ -38,7 +38,9 @@ TODO: Write development instructions here
 - [QuirinuX](https://github.com/quirinux) - creator and maintainer
 
 ## The following was generated using readme itself :-)
-check out how it is done on [README.md.j2](README.md.j2)!
+
+check out how it is done on [README.md.j2](README.md.j2).
+
 ---
 
 ## Table of Contents
@@ -56,6 +58,5 @@ readme file processor
 - TODO: add file type filter
 - TODO: add user passed path instead of listing current
 - TODO: add no-recursive option
-
 
 
