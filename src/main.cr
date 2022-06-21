@@ -3,7 +3,6 @@
 require "option_parser"
 require "./readme"
 
-# args = Hash(Symbol, (Symbol | String | Array(String) | Bool)){
 args = Hash(Symbol, Readme::ARGTYPE){
   :template  => :default,
   :output    => :stdout,
