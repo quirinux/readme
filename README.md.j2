@@ -38,13 +38,15 @@ TODO: Write development instructions here
 - [QuirinuX](https://github.com/quirinux) - creator and maintainer
 
 ## The following was generated using readme itself :-)
-check out how it is done on [README.md.j2](README.md.j2)!
+
+check out how it is done on [README.md.j2](README.md.j2).
+
 ---
 
 ## Table of Contents
 {% for file in files -%}
 {%- if file.content|length > 0 %}
-1. [{{ file.filename }}](#{{ file.filename|replace("/", "")|replace(".", "") }})
+1. [{{ file.filename }}](#{{ file.filename|replace("/")|replace(".") }})
 {% endif %}
 {%- endfor %}
 
@@ -56,5 +58,3 @@ check out how it is done on [README.md.j2](README.md.j2)!
 
 {% endif %}
 {%- endfor %}
-
-

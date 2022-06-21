@@ -100,6 +100,10 @@ module Readme
       env = Crinja.new(config: config)
       processed = env.from_string(@template.to_s).render({files: @context})
       show processed
+    rescue ex : Crinja::TemplateNotFoundError
+      puts ex
+    rescue ex : Crinja::FeatureLibrary::UnknownFeatureError
+      puts ex
     end
 
     def show(processed)
