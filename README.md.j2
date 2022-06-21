@@ -23,6 +23,7 @@ TODO: Write development instructions here
 
 ### TODO
 - [ ] having TODO/BUG/FIX dictionary would be nice to get it more feature rich
+- [ ] needs to improve template error handling
 
 ## Contributing
 
@@ -37,15 +38,16 @@ TODO: Write development instructions here
 - [QuirinuX](https://github.com/quirinux) - creator and maintainer
 
 ## The following was generated using readme itself :-)
+check out how it is done on [README.md.j2](README.md.j2)!
+---
 
 ## Table of Contents
 {% for file in files -%}
 {%- if file.content|length > 0 %}
-1. [{{ file.filename }}](#{{ file.filename }})
+1. [{{ file.filename }}](#{{ file.filename|replace("/", "")|replace(".", "") }})
 {% endif %}
 {%- endfor %}
 
----
 {% for file in files -%}
 {%- if file.content|length > 0 %}
 ### [{{ file.filename }}]({{ file.filename }})
