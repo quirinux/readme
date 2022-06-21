@@ -1,0 +1,8 @@
+{% include "HEADER.md" %}
+
+Index
+{% for file in files -%}
+{%- if file.content|length > 0 %}
+* {{ file.filename }}
+{% endif %}
+{%- endfor %}

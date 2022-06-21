@@ -1,0 +1,17 @@
+## Table of Contents
+{% for file in files %}
+{% if file.content|length > 0 %}
+1. [{{ file.filename }}](#{{ file.filename }})
+{% endif %}
+{% endfor %}
+
+
+{% for file in files %}
+{% if file.content|length > 0 %}
+## {{ file.filename }}
+```
+{{ file.content }}
+```
+
+{% endif %}
+{% endfor %}

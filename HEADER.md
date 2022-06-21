@@ -36,5 +36,5 @@ TODO: Write development instructions here
 
 - [QuirinuX](https://github.com/quirinux) - creator and maintainer
 
-## The following was generated using readme self :-)
+## The following was generated using readme itself :-)
 
