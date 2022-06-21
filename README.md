@@ -36,19 +36,25 @@ TODO: Write development instructions here
 
 - [QuirinuX](https://github.com/quirinux) - creator and maintainer
 
-## The following was generated using readme self :-)
+## The following was generated using readme itself :-)
+
+## Table of Contents
+1. [src/main.cr](#src/main.cr)
+1. [src/readme.cr](#src/readme.cr)
 
 
-
-### [src/main.cr](src/main.cr)
+## src/main.cr
+```
 this is the project main file, where all the magic begins
 TODO: it'd be nice to have an exclude path/files flag
+```
 
-### [src/readme.cr](src/readme.cr)
+## src/readme.cr
+```
 readme file processor
 - TODO: add pattern filter
 - TODO: add file type filter
 - TODO: add user passed path instead of listing current
 - TODO: add no-recursive option
-- TODO: add output file redirection
+```
 
