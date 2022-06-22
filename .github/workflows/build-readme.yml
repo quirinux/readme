@@ -18,10 +18,9 @@ jobs:
           git config --global --add safe.directory /__w/readme/readme
           git config --global user.name 'Github Action'
           git config --global user.email 'workflow@users.noreply.github.com'
-          git add .
-          git commit -m "Automated README.md"
-          git push || true
-          return true
+          git add . || exit 0
+          git commit -m "Automated README.md" || exit 0
+          git push || exit 0
       - name: Uploading Assets
         uses: actions/upload-release-asset@v1.0.1
         env:
