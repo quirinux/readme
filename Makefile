@@ -8,7 +8,8 @@ run:
 	shards run -- ${ARGS}
 
 build:
-	shards build --release
+	shards build --production --release --static --no-debug
+	strip ./bin/readme
 
 README.md:
 	./bin/readme --template README.md.j2 > README.md
