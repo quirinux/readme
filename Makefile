@@ -12,4 +12,5 @@ build:
 	strip ./bin/readme
 
 README.md:
-	./bin/readme --template README.md.j2 > README.md
+	./bin/readme --help > ./templates/HELP.txt.j2
+	./bin/readme --template ./templates/README.md.j2 > README.md
