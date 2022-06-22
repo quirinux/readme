@@ -1,4 +1,5 @@
 #> readme file processor
+# > this is the app file
 
 require "crinja"
 require "ecr"
@@ -6,8 +7,8 @@ require "ecr"
 module Readme
   APPNAME = "readme"
   VERSION = "0.1.0"
-  # PATTERN = "^(\\s|\\t)*#>" # BUG: this throws a weird memory leak error on libc
-  PATTERN = "^#>"
+  PATTERN = /^(\\s|\\t)*(#|\/\/)\s?>/ # BUG: this throws a weird memory leak error on libc
+  # PATTERN = "^#>"
   alias ARGTYPE = Symbol | String | Array(String) | Bool
   DEFAULT_TEMPLATE = ECR.render("templates/default.ecr")
 
@@ -31,8 +32,12 @@ module Readme
         .map { |m| m.strip }
         .select { |s| s =~ /#{PATTERN}/ }
         .map do |m|
-          if m.size >= 3
-            m[3..]
+          size = 1
+          if md = m.match(PATTERN)
+            size += md[0].size
+          end
+          if m.size >= size
+            m[size..]
           else
             "\n"
           end
@@ -69,7 +74,6 @@ module Readme
     def context_setup
       case @template
       when Symbol
-        # @template = ECR.render("templates/default.ecr")
         @template = DEFAULT_TEMPLATE
       when String
         @template = File.read_lines(@template.to_s).join("\n")

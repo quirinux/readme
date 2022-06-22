@@ -1,7 +1,7 @@
 ## Table of Contents
 {% for file in files %}
 {% if file.content|length > 0 %}
-1. [{{ file.filename }}](#{{ file.filename }})
+1. [{{ file.filename }}](#{{ file.filename | replace("/") | replace(".") }})
 {% endif %}
 {% endfor %}
 
