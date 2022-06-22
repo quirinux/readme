@@ -37,26 +37,50 @@ TODO: Write development instructions here
 
 - [QuirinuX](https://github.com/quirinux) - creator and maintainer
 
-## The following was generated using readme itself :-)
 
-check out how it is done on [README.md.j2](README.md.j2).
+The following was generated using readme itself :-), check out how it is done on [README.md.j2](README.md.j2).
 
 ---
 
 ## Table of Contents
-1. [src/main.cr](#srcmaincr)
+1. [example/rust.rs](#examplerustrs)
+1. [example/ruby.rb](#examplerubyrb)
+1. [example/python.py](#examplepythonpy)
 1. [src/readme.cr](#srcreadmecr)
+1. [src/main.cr](#srcmaincr)
 
-### [src/main.cr](src/main.cr)
-this is the project main file, where all the magic begins
-TODO: it'd be nice to have an exclude path/files flag
+### [example/rust.rs](example/rust.rs)
+this is supposed to be a rust file with
+
+
+some nice comments in it
+
+
+### [example/ruby.rb](example/ruby.rb)
+this is supposed to be a ruby file with
+
+
+some nice comments in it
+
+
+### [example/python.py](example/python.py)
+this is supposed to be a python file with
+
+
+some nice comments in it
 
 
 ### [src/readme.cr](src/readme.cr)
 readme file processor
+this is the app file
 - TODO: add pattern filter
 - TODO: add file type filter
 - TODO: add user passed path instead of listing current
 - TODO: add no-recursive option
+
+
+### [src/main.cr](src/main.cr)
+this is the project main file, where all the magic begins
+TODO: it'd be nice to have an exclude path/files flag
 
 
