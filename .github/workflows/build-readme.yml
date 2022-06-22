@@ -21,6 +21,7 @@ jobs:
           git add .
           git commit -m "Automated README.md"
           git push
+          true
       - name: Uploading Assets
         uses: actions/upload-release-asset@v1.0.1
         env:
