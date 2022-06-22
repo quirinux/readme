@@ -17,7 +17,17 @@ TODO: Write installation instructions here
 
 ## Usage
 
-TODO: Write usage instructions here
+```
+Usage: readme [arguments]
+    -t FILE, --template=FILE         ECR template file, [default: default]
+    -o FILE, --output=FILE           Specifies output file, [default: stdout]
+    --no-recursive                   Disable recursive file lookup, [default: false]
+    --file-type                      File type extension to filter, [default: any]
+    -v, --version                    Show version
+    -h, --help                       Show this help
+    --show-context                   Shows default context and templates
+For further help with templates please refer to: https://github.com/straight-shoota/crinja
+```
 
 ## Development
 
@@ -45,32 +55,11 @@ The following was generated using readme itself :-), check out how it is done on
 ---
 
 ## Table of Contents
-1. [example/rust.rs](#examplerustrs)
-1. [example/ruby.rb](#examplerubyrb)
-1. [example/python.py](#examplepythonpy)
 1. [src/readme.cr](#srcreadmecr)
 1. [src/main.cr](#srcmaincr)
-
-### [example/rust.rs](example/rust.rs)
-this is supposed to be a rust file with
-
-
-some nice comments in it
-
-
-### [example/ruby.rb](example/ruby.rb)
-this is supposed to be a ruby file with
-
-
-some nice comments in it
-
-
-### [example/python.py](example/python.py)
-this is supposed to be a python file with
-
-
-some nice comments in it
-
+1. [examples/rust.rs](#examplesrustrs)
+1. [examples/ruby.rb](#examplesrubyrb)
+1. [examples/python.py](#examplespythonpy)
 
 ### [src/readme.cr](src/readme.cr)
 readme file processor
@@ -84,5 +73,26 @@ this is the app file
 ### [src/main.cr](src/main.cr)
 this is the project main file, where all the magic begins
 TODO: it'd be nice to have an exclude path/files flag
+
+
+### [examples/rust.rs](examples/rust.rs)
+this is supposed to be a rust file with
+
+
+some nice comments in it
+
+
+### [examples/ruby.rb](examples/ruby.rb)
+this is supposed to be a ruby file with
+
+
+some nice comments in it
+
+
+### [examples/python.py](examples/python.py)
+this is supposed to be a python file with
+
+
+some nice comments in it
 
 
