@@ -1,3 +1,5 @@
+[![Building README.md](https://github.com/quirinux/readme/actions/workflows/build-readme.yml/badge.svg)](https://github.com/quirinux/readme/actions/workflows/build-readme.yml)
+
 # ReadME - a github readme builder
 readme is a cli tool to extract markdown text from source code files
 

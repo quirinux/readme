@@ -20,8 +20,8 @@ jobs:
           git config --global user.email 'workflow@users.noreply.github.com'
           git add .
           git commit -m "Automated README.md"
-          git push
-          true
+          git push || true
+          return true
       - name: Uploading Assets
         uses: actions/upload-release-asset@v1.0.1
         env:
