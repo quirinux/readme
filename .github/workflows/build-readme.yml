@@ -4,10 +4,12 @@ on: push
 jobs:
   build:
     runs-on: ubuntu-latest
-    container: crystallang/crystal:latest
+    container: crystallang/crystal:latest-alpine
     steps:
       - uses: actions/checkout@master
-      - name: Building self
+      - name: Update Libs
+        run: apk add --update --upgrade --no-cache --force-overwrite libxml2-dev yaml-dev
+      - name: Building itself
         run: make build
       - name: Building README.md
         run: make README.md
