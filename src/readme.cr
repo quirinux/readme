@@ -3,10 +3,11 @@
 
 require "crinja"
 require "ecr"
+require "shard"
 
 module Readme
-  APPNAME = "readme"
-  VERSION = "0.1.0"
+  APPNAME = Shard.name
+  VERSION = Shard.version
   PATTERN = /^(\\s|\\t)*(#|\/\/)\s?>/ # BUG: this throws a weird memory leak error on libc
   # PATTERN = "^#>"
   alias ARGTYPE = Symbol | String | Array(String) | Bool
