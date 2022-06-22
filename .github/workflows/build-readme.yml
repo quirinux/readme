@@ -21,12 +21,3 @@ jobs:
           git add . || exit 0
           git commit -m "Automated README.md" || exit 0
           git push || exit 0
-      - name: Uploading Assets
-        uses: actions/upload-release-asset@v1.0.1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          upload_url: ${{ github.event.release.upload_url }}
-          asset_path: ./bin/readme
-          asset_name: readme-${{ github.event.release.tag_name }}-linux-x86_64
-          asset_content_type: binary/octet-stream
