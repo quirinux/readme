@@ -11,6 +11,8 @@ jobs:
     container: crystallang/crystal:latest-alpine
     steps:
       - uses: actions/checkout@master
+      - name: Debuging
+        run: echo ${ github.event.base_ref }
       - name: Update Libs
         if: github.event.base_ref == 'refs/heads/master'
         run: apk add --update --upgrade --no-cache --force-overwrite libxml2-dev yaml-dev
