@@ -1,7 +1,9 @@
+.ONESHELL:
 .PHONY: README.md
+
+
 ARGS := --debug
 TAG = v${shell shards version}
-.ONESHELL:
 
 run:
 	shards run -- ${ARGS}
@@ -31,6 +33,11 @@ tag-me:
 	git tag -a ${TAG} -m "Tagging release ${TAG}"
 	git tag
 	git push origin --tags
+
+retag:
+	git tag -d ${TAG}
+	git push origin --tags
+	${MAKE} tag-me TAG=${TAG}
 
 version:
 	@shards version
