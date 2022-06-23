@@ -15,22 +15,16 @@ jobs:
       - name: Debuging
         run: echo ${{ github.ref_name }}
       - name: Update Libs
-        if: github.event.ref_name == 'master'
         run: apk add --update --upgrade --no-cache --force-overwrite libxml2-dev yaml-dev
       - name: Building itself
-        if: github.event.ref_name == 'master'
         run: make build.release
       - name: Building README.md
-        if: github.event.ref_name == 'master'
         run: make README.md
       - name: Commit README.md
-        if: github.event.ref_name == 'master'
         run: make git-me
       - name: Making sure there is a relase note set up
-        if: github.event.ref_name == 'master'
         run: make changelog/${{ github.ref_name }}
       - name: Release
-        if: github.event.ref_name == 'master'
         uses: softprops/action-gh-release@v1
         with:
           body_path: ${{ github.workspace }}/changelog/${{ github.ref_name}}.md
