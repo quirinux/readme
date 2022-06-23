@@ -1,10 +1,13 @@
 ---
-name: Building README.md
+name: Building for Release
 on: 
   push:
+    tags:
+      - "v*"
     branches:
       - main
       - master
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -14,8 +17,15 @@ jobs:
       - name: Update Libs
         run: apk add --update --upgrade --no-cache --force-overwrite libxml2-dev yaml-dev
       - name: Building itself
-        run: make build
+        run: make build.release
       - name: Building README.md
         run: make README.md
       - name: Commit README.md
         run: make git-me
+      - name: Making sure there is a relase note set up
+        run: make changelog/${{ github.ref }}
+      - name: Release
+        uses: softprops/action-gh-release@v1
+        with:
+          body_path: ${{ github.workspace }}/changelog/${{ github.ref }}.md
+          files: ./bin/readme

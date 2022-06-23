@@ -28,21 +28,24 @@ module Readme
       @content = load_template(filename)
     end
 
+    def map_content(m)
+      size = 1
+      if md = m.match(PATTERN)
+        size += md[0].size
+      end
+      if m.size >= size
+        m[size..]
+      else
+        "\n"
+      end
+    end
+
     def load_template(filename)
       File.read_lines(filename)
         .map { |m| m.strip }
         .select { |s| s =~ /#{PATTERN}/ }
-        .map do |m|
-          size = 1
-          if md = m.match(PATTERN)
-            size += md[0].size
-          end
-          if m.size >= size
-            m[size..]
-          else
-            "\n"
-          end
-        end.join("\n")
+        .map{ |m| map_content m }
+        .join("\n")
     end
   end
 
