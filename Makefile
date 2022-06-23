@@ -30,6 +30,7 @@ git-me:
 tag-me:
 	git tag -a ${TAG} -m "Tagging release ${TAG}"
 	git tag
+	git push origin --tags
 
 version:
 	@shards version
