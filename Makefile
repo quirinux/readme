@@ -1,5 +1,6 @@
 .PHONY: README.md
 ARGS := --debug
+TAG = v${shell shards version}
 .ONESHELL:
 
 run:
@@ -25,6 +26,10 @@ git-me:
 	git add . || exit 0
 	git commit -m "Automated README.md" || exit 0
 	git push || exit 0
+
+tag-me:
+	git tag -a ${TAG} -m "Tagging release ${TAG}"
+	git tag
 
 version:
 	@shards version
