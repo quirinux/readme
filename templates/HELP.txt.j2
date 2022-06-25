@@ -1,9 +1,9 @@
-Usage: readme [arguments]
-    -t FILE, --template=FILE         ECR template file, [default: default]
-    -o FILE, --output=FILE           Specifies output file, [default: stdout]
+Usage: readme [arguments] [PATHS, dafault(current)]
+    -t FILE, --template=FILE         Jinja2 template file, [default: default]
     --no-recursive                   Disable recursive file lookup, [default: false]
-    --file-type                      File type extension to filter, [default: any]
+    --file-type=FILETYPE             File type extension to filter, [default: any]
     -v, --version                    Show version
     -h, --help                       Show this help
-    --show-context                   Shows default context and templates
+    --show-context                   Shows default context and template
+
 For further help with templates please refer to: https://github.com/straight-shoota/crinja

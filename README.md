@@ -19,14 +19,14 @@ TODO: Write installation instructions here
 ## Usage
 
 ```
-Usage: readme [arguments]
-    -t FILE, --template=FILE         ECR template file, [default: default]
-    -o FILE, --output=FILE           Specifies output file, [default: stdout]
+Usage: readme [arguments] [PATHS, dafault(current)]
+    -t FILE, --template=FILE         Jinja2 template file, [default: default]
     --no-recursive                   Disable recursive file lookup, [default: false]
-    --file-type                      File type extension to filter, [default: any]
+    --file-type=FILETYPE             File type extension to filter, [default: any]
     -v, --version                    Show version
     -h, --help                       Show this help
-    --show-context                   Shows default context and templates
+    --show-context                   Shows default context and template
+
 For further help with templates please refer to: https://github.com/straight-shoota/crinja
 ```
 
@@ -56,44 +56,40 @@ The following was generated using readme itself :-), check out how it is done on
 ---
 
 ## Table of Contents
-1. [src/readme.cr](#srcreadmecr)
-1. [src/main.cr](#srcmaincr)
-1. [examples/rust.rs](#examplesrustrs)
-1. [examples/ruby.rb](#examplesrubyrb)
-1. [examples/python.py](#examplespythonpy)
+1. [./examples/python.py](#examplespythonpy)
+1. [./examples/ruby.rb](#examplesrubyrb)
+1. [./examples/rust.rs](#examplesrustrs)
+1. [./src/main.cr](#srcmaincr)
+1. [./src/readme.cr](#srcreadmecr)
 
-### [src/readme.cr](src/readme.cr)
-readme file processor
-this is the app file
-- TODO: add pattern filter
-- TODO: add file type filter
-- TODO: add user passed path instead of listing current
-- TODO: add no-recursive option
-
-
-### [src/main.cr](src/main.cr)
-this is the project main file, where all the magic begins
-TODO: it'd be nice to have an exclude path/files flag
-
-
-### [examples/rust.rs](examples/rust.rs)
-this is supposed to be a rust file with
+### [./examples/python.py](./examples/python.py)
+this is supposed to be a python file with
 
 
 some nice comments in it
 
 
-### [examples/ruby.rb](examples/ruby.rb)
+### [./examples/ruby.rb](./examples/ruby.rb)
 this is supposed to be a ruby file with
 
 
 some nice comments in it
 
 
-### [examples/python.py](examples/python.py)
-this is supposed to be a python file with
+### [./examples/rust.rs](./examples/rust.rs)
+this is supposed to be a rust file with
 
 
 some nice comments in it
+
+
+### [./src/main.cr](./src/main.cr)
+this is the project main file, where all the magic begins
+TODO: it'd be nice to have an exclude path/files flag
+
+
+### [./src/readme.cr](./src/readme.cr)
+readme file processor
+this is the app file
 
 
