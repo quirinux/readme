@@ -1,4 +1,4 @@
-#> readme file processor
+# > readme file processor
 # > this is the app file
 
 require "crinja"
@@ -44,7 +44,7 @@ module Readme
       File.read_lines(filename)
         .map { |m| m.strip }
         .select { |s| s =~ /#{PATTERN}/ }
-        .map{ |m| map_content m }
+        .map { |m| map_content m }
         .join("\n")
     end
   end
@@ -94,11 +94,17 @@ module Readme
     end
 
     def list_files
-      #> - TODO: add pattern filter
-      #> - TODO: add file type filter
-      #> - TODO: add user passed path instead of listing current
-      #> - TODO: add no-recursive option
-      @filelist = Dir["**/*"].reject { |f| File.directory?(f) }
+      @filelist = Dir[lookfor_here].reject { |f| File.directory?(f) }.sort
+    end
+
+    def lookfor_here
+      _dir = "."
+      _dir = "./{#{ @path.as(Array(String)).join(",") }}" if @path.as?(Array(String))
+      _list = "**"
+      _list = "" if ! @recursive.as(Bool)
+      _file = "*"
+      _file = "*.#{@filetype.as(String)}" if @filetype.as?(String)
+      [_dir, _list, _file].join("/")
     end
 
     def render

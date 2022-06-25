@@ -1,9 +1,11 @@
 .ONESHELL:
 .PHONY: README.md
-
-
+DOCKER_USER := quirinux
+DOCKER_REPO := readme
+VERSION := ${shell shards version}
+DOCKER_CONTEXT := .
 ARGS := --debug
-TAG = v${shell shards version}
+TAG = v${VERSION}
 
 run:
 	shards run -- ${ARGS}
@@ -14,6 +16,14 @@ build:
 build.release:
 	${MAKE} build ARGS="--production --release --static --no-debug"
 	strip ./bin/readme
+
+docker.build:
+	docker build -t ${DOCKER_USER}/${DOCKER_REPO}:${VERSION} ${DOCKER_CONTEXT}
+	docker tag ${DOCKER_USER}/${DOCKER_REPO}:${VERSION} ${DOCKER_USER}/${DOCKER_REPO}:latest
+
+docker.push:
+	docker push ${DOCKER_USER}/${DOCKER_REPO}:${VERSION}
+	docker push ${DOCKER_USER}/${DOCKER_REPO}:latest
 
 README.md:
 	./bin/readme --help > ./templates/HELP.txt.j2
