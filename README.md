@@ -59,14 +59,14 @@ TODO: Write development instructions here
 - [QuirinuX](https://github.com/quirinux) - creator and maintainer
 
 
-The following was generated using readme itself :-), check out how it is done on [README.md.j2](README.md.j2).
+The following was generated using readme itself :-), check out how it is done on [README.md.j2](README.md.hbs).
 
 ---
 
 ## Table of Contents
-1. [examples/rust.rs](examples/rust.rs)
-1. [examples/python.py](examples/python.py)
-1. [examples/ruby.rb](examples/ruby.rb)
+1. [examples/rust.rs](#examples/rust.rs)
+1. [examples/python.py](#examples/python.py)
+1. [examples/ruby.rb](#examples/ruby.rb)
 
 ## examples/rust.rs
 ```
