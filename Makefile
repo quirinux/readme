@@ -2,6 +2,7 @@
 .PHONY: README.md changelog
 DOCKER_USER := quirinux
 DOCKER_REPO := readme
+DOCKER_PASS := 
 VERSION := ${shell cat Cargo.toml | grep version | head -1 | grep -o -e "[0-9]\.[0-9]\.[0-9]"}
 BIN := ${shell cat Cargo.toml | grep name | head -1 | grep -o -e "\".*\"" | sed -e s/\"//g}
 DOCKER_CONTEXT := .
@@ -30,6 +31,9 @@ docker.build:
 docker.push:
 	docker push ${DOCKER_USER}/${DOCKER_REPO}:${VERSION}
 	docker push ${DOCKER_USER}/${DOCKER_REPO}:latest
+
+docker.login:
+	docker login --username ${DOCKER_USER} --password ${DOCKER_PASS}
 
 README.md:
 	${README} --help > ./templates/HELP.txt
