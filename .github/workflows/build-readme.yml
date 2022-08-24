@@ -12,7 +12,7 @@ jobs:
     steps:
       - uses: actions/checkout@master
       - name: Building itself
-        run: make build TARGET=release
+        run: make build.release
       - name: Building README.md
         run: make README.md TARGET=release
       - name: Committing README.md
