@@ -25,11 +25,11 @@ strip:
 	strip ${README}
 
 docker.build:
-	docker build -t ${DOCKER_USER}/${DOCKER_REPO}:${VERSION} ${DOCKER_CONTEXT}
-	docker tag ${DOCKER_USER}/${DOCKER_REPO}:${VERSION} ${DOCKER_USER}/${DOCKER_REPO}:latest
+	docker build -t ${DOCKER_USER}/${DOCKER_REPO}:${TAG} ${DOCKER_CONTEXT}
+	docker tag ${DOCKER_USER}/${DOCKER_REPO}:${TAG} ${DOCKER_USER}/${DOCKER_REPO}:latest
 
 docker.push:
-	docker push ${DOCKER_USER}/${DOCKER_REPO}:${VERSION}
+	docker push ${DOCKER_USER}/${DOCKER_REPO}:${TAG}
 	docker push ${DOCKER_USER}/${DOCKER_REPO}:latest
 
 docker.login:
