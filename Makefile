@@ -18,6 +18,9 @@ build:
 
 build.release:
 	${MAKE} build ARGS=--release TARGET=release
+	${MAKE} strip TARGET=release
+
+strip:
 	strip ${README}
 
 docker.build:
