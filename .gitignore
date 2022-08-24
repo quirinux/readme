@@ -4,3 +4,8 @@
 /.shards/
 *.dwarf
 .envrc
+
+
+# Added by cargo
+
+/target

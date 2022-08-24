@@ -19,7 +19,7 @@ TODO: Write installation instructions here
 ## Usage
 
 ```
-{% include "templates/HELP.txt.j2" %}
+{{ include "templates/HELP.txt" }}
 ```
 
 ## Development
@@ -48,17 +48,15 @@ The following was generated using readme itself :-), check out how it is done on
 ---
 
 ## Table of Contents
-{% for file in files -%}
-{%- if file.content|length > 0 %}
-1. [{{ file.filename }}](#{{ file.filename|replace("/")|replace(".") }})
-{% endif %}
-{%- endfor %}
+{{#each files as | file |}}
+1. [{{ file.relative }}]({{ file.relative }})
+{{/each}}
 
-{% for file in files -%}
-{%- if file.content|length > 0 %}
-### [{{ file.filename }}]({{ file.filename }})
-{{ file.content }}
+{{#each files as | file |}}
+## {{ file.relative }}
+```
+{{ join file.content }}
+```
 
+{{/each}}
 
-{% endif %}
-{%- endfor %}

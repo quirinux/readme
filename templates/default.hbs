@@ -1,0 +1,13 @@
+## Table of Contents
+{{#each files as | file |}}
+1. [{{ file.relative }}]({{ file.relative }})
+{{/each}}
+
+{{#each files as | file |}}
+## {{ file.relative }}
+```
+{{ join file.content }}
+```
+
+{{/each}}
+

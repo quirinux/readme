@@ -8,14 +8,12 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    container: crystallang/crystal:latest-alpine
+    container: rust:latest
     steps:
       - uses: actions/checkout@master
-      - name: Update Libs
-        run: apk add --update --upgrade --no-cache --force-overwrite libxml2-dev yaml-dev
       - name: Building itself
-        run: make build
+        run: make build TARGET=release
       - name: Building README.md
-        run: make README.md
-      - name: Commit README.md
+        run: make README.md TARGET=release
+      - name: Committing README.md
         run: make git-me

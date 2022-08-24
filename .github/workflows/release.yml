@@ -9,28 +9,24 @@ on:
 jobs:
   relase:
     runs-on: ubuntu-latest
-    container: crystallang/crystal:latest-alpine
+    container: rust:latest
     steps:
       - uses: actions/checkout@master
       - name: Debuging
         run: |
           echo ${{ github.ref_name }}
           env
-      - name: Update Libs
-        run: apk add --update --upgrade --no-cache --force-overwrite libxml2-dev yaml-dev
       - name: Building itself
         run: make build.release
       - name: Building README.md
-        run: make README.md
+        run: make README.md TARGET=release
       - name: Commit README.md
         run: make git-me
-      - name: Making sure there is a relase note set up
-        run: make changelog/${{ github.ref_name }}
       - name: Release
         uses: softprops/action-gh-release@v1
         with:
           body_path: ${{ github.workspace }}/changelog/${{ github.ref_name}}.md
-          files: ./bin/readme
+          files: ./target/release/readme
   docker:
     runs-on: ubuntu-latest
     steps:

@@ -1,21 +1,24 @@
 .ONESHELL:
-.PHONY: README.md
+.PHONY: README.md changelog
 DOCKER_USER := quirinux
 DOCKER_REPO := readme
-VERSION := ${shell shards version}
+VERSION := ${shell cat Cargo.toml | grep version | head -1 | grep -o -e "[0-9]\.[0-9]\.[0-9]"}
+BIN := ${shell cat Cargo.toml | grep name | head -1 | grep -o -e "\".*\"" | sed -e s/\"//g}
 DOCKER_CONTEXT := .
-ARGS := --debug
+ARGS := 
 TAG = v${VERSION}
+TARGET := debug
+README := ./target/${TARGET}/${BIN}
 
 run:
-	shards run -- ${ARGS}
+	cargo run -- ${ARGS}
 
 build:
-	shards build ${ARGS}
+	cargo build ${ARGS}
 
 build.release:
-	${MAKE} build ARGS="--production --release --static --no-debug"
-	strip ./bin/readme
+	${MAKE} build ARGS=--release TARGET=release
+	strip ${README}
 
 docker.build:
 	docker build -t ${DOCKER_USER}/${DOCKER_REPO}:${VERSION} ${DOCKER_CONTEXT}
@@ -26,8 +29,8 @@ docker.push:
 	docker push ${DOCKER_USER}/${DOCKER_REPO}:latest
 
 README.md:
-	./bin/readme --help > ./templates/HELP.txt.j2
-	./bin/readme --template ./templates/README.md.j2 > README.md
+	${README} --help > ./templates/HELP.txt
+	${README} --template ./templates/README.md.hbs > README.md
 
 git-me:
 	if [ -d "/__w/readme/readme" ]; then
@@ -50,7 +53,7 @@ retag:
 	${MAKE} tag-me TAG=${TAG}
 
 version:
-	@shards version
+	@echo ${VERSION}
 
-changelog/%: 
-	echo "Empty release note" > $@
+changelog: 
+	nvim changelog/${TAG}.md
