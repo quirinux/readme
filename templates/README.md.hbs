@@ -1,7 +1,7 @@
 [![Building README.md](https://github.com/quirinux/readme/actions/workflows/build-readme.yml/badge.svg)](https://github.com/quirinux/readme/actions/workflows/build-readme.yml)
 [![Building for Release](https://github.com/quirinux/readme/actions/workflows/release.yml/badge.svg)](https://github.com/quirinux/readme/actions/workflows/release.yml)
-![Docker Pulls](https://img.shields.io/docker/pulls/quirinux/readme)
-![Docker Image Version (tag latest semver)](https://img.shields.io/docker/v/quirinux/readme/latest)
+[![Docker Pulls](https://img.shields.io/docker/pulls/quirinux/readme)](https://hub.docker.com/r/quirinux/readme)
+[![Docker Image Version (tag latest semver)](https://img.shields.io/docker/v/quirinux/readme/latest)](https://hub.docker.com/r/quirinux/readme)
 
 # ReadME - a github readme builder
 readme is a cli tool to extract markdown text from source code files
