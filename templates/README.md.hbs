@@ -43,13 +43,13 @@ TODO: Write development instructions here
 - [QuirinuX](https://github.com/quirinux) - creator and maintainer
 
 
-The following was generated using readme itself :-), check out how it is done on [README.md.j2](README.md.j2).
+The following was generated using readme itself :-), check out how it is done on [README.md.j2](README.md.hbs).
 
 ---
 
 ## Table of Contents
 {{#each files as | file |}}
-1. [{{ file.relative }}]({{ file.relative }})
+1. [{{ file.relative }}](#{{ file.relative }})
 {{/each}}
 
 {{#each files as | file |}}
