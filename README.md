@@ -19,15 +19,23 @@ TODO: Write installation instructions here
 ## Usage
 
 ```
-Usage: readme [arguments] [PATHS, dafault(current)]
-    -t FILE, --template=FILE         Jinja2 template file, [default: default]
-    --no-recursive                   Disable recursive file lookup, [default: false]
-    --file-type=FILETYPE             File type extension to filter, [default: any]
-    -v, --version                    Show version
-    -h, --help                       Show this help
-    --show-context                   Shows default context and template
+readme 0.1.1
+cli tool to extract markdown text from source code files
 
-For further help with templates please refer to: https://github.com/straight-shoota/crinja
+USAGE:
+    readme [OPTIONS] [PATH]
+
+ARGS:
+    &lt;PATH&gt;    
+
+OPTIONS:
+    -f, --file-type &lt;FILE_TYPE&gt;    file types to filter by in a regex pattern
+    -h, --help                     Print help information
+    -n, --no-recursive             whether or not to look for files recursively
+    -s, --show-context             prints context and exit
+    -t, --template &lt;TEMPLATE&gt;      Handlebars template file
+    -V, --version                  Print version information
+
 ```
 
 ## Development
@@ -56,40 +64,27 @@ The following was generated using readme itself :-), check out how it is done on
 ---
 
 ## Table of Contents
-1. [./examples/python.py](#examplespythonpy)
-1. [./examples/ruby.rb](#examplesrubyrb)
-1. [./examples/rust.rs](#examplesrustrs)
-1. [./src/main.cr](#srcmaincr)
-1. [./src/readme.cr](#srcreadmecr)
+1. [examples/rust.rs](examples/rust.rs)
+1. [examples/python.py](examples/python.py)
+1. [examples/ruby.rb](examples/ruby.rb)
 
-### [./examples/python.py](./examples/python.py)
-this is supposed to be a python file with
-
-
-some nice comments in it
-
-
-### [./examples/ruby.rb](./examples/ruby.rb)
-this is supposed to be a ruby file with
-
-
-some nice comments in it
-
-
-### [./examples/rust.rs](./examples/rust.rs)
+## examples/rust.rs
+```
 this is supposed to be a rust file with
-
-
 some nice comments in it
+```
 
+## examples/python.py
+```
+this is supposed to be a python file with
+some nice comments in it
+```
 
-### [./src/main.cr](./src/main.cr)
-this is the project main file, where all the magic begins
-TODO: it'd be nice to have an exclude path/files flag
+## examples/ruby.rb
+```
+this is supposed to be a ruby file with
+some nice comments in it
+```
 
-
-### [./src/readme.cr](./src/readme.cr)
-readme file processor
-this is the app file
 
 

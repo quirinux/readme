@@ -1,9 +1,16 @@
-Usage: readme [arguments] [PATHS, dafault(current)]
-    -t FILE, --template=FILE         Jinja2 template file, [default: default]
-    --no-recursive                   Disable recursive file lookup, [default: false]
-    --file-type=FILETYPE             File type extension to filter, [default: any]
-    -v, --version                    Show version
-    -h, --help                       Show this help
-    --show-context                   Shows default context and template
+readme 0.1.1
+cli tool to extract markdown text from source code files
 
-For further help with templates please refer to: https://github.com/straight-shoota/crinja
+USAGE:
+    readme [OPTIONS] [PATH]
+
+ARGS:
+    <PATH>    
+
+OPTIONS:
+    -f, --file-type <FILE_TYPE>    file types to filter by in a regex pattern
+    -h, --help                     Print help information
+    -n, --no-recursive             whether or not to look for files recursively
+    -s, --show-context             prints context and exit
+    -t, --template <TEMPLATE>      Handlebars template file
+    -V, --version                  Print version information
