@@ -1,3 +1,4 @@
+// > this is where the vm is orchestrated
 use crate::context;
 use clap::Parser;
 use handlebars::{handlebars_helper, Handlebars};
@@ -12,7 +13,25 @@ use walkdir::{DirEntry, WalkDir};
 
 type ResultHelper = Result<String, Box<dyn error::Error>>;
 
+// > Aiming having a richier templating engine some new functions were created to make readme usage easier to work with:
+// >
+// > ### join
+// > Desc: joins multiple string in one
+// > Mandatory args:
+// > - x: Veac<string>, array of strings to get joined with
+// > Optional args:
+// > - with: str = "\n", string used to join
+// > Return:
+// > - string, resulted joined string
 handlebars_helper!(join: |x: Vec<String>, { with: str = "\n" }| x.join(with));
+// > ### include
+// > to include another file content, no parsing or process is ran against it
+// > Mandatory args:
+// > - path: <PathBuf>, file path to include, fails if file does not exist
+// > Return:
+// > string, file content within a single string
+// > TODO:
+// > - include the file on processing context instead of raw, making it possible to be a handlebar file
 handlebars_helper!(include: |path: PathBuf | {
     let _file = File::open(&path)?;
     let mut _reader = BufReader::new(_file);

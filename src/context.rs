@@ -1,9 +1,12 @@
+// > Handlebar VM context
 use pathdiff::diff_paths;
 use regex::Regex;
 use serde::Serialize;
 use std::io::ErrorKind;
 
-const PATTERN: &str = r"^(\\s|\\t)*(#|//)\s?>";
+// > Default comment regex: r"^(\s|\t)*(#|//)\s?>"
+const PATTERN: &str = r"^(\s|\t)*(#|//)\s?>";
+// > Default embedded template [../templates/default.hbs](../templates/default.hbs)
 const TEMPLATE: &str = std::include_str!("../templates/default.hbs");
 use std::{
     fs::File,
@@ -11,10 +14,14 @@ use std::{
     path::{Path, PathBuf},
 };
 
+// > Each matching file is registered internaly like an item as follows and all of them are made avialable on vm context:
 #[derive(Debug, Default, Serialize)]
 pub struct Item {
+    // > - absolute: handles the absolute file path
     absolute: PathBuf,
+    // > relative: handles the file relative path to pwd
     relative: PathBuf,
+    // > content: file content itself
     content: Vec<String>,
 }
 
@@ -52,7 +59,6 @@ impl Item {
 }
 
 // CONTEXT
-
 #[derive(Debug, Default)]
 pub struct Context {
     root: PathBuf,
