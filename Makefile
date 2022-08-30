@@ -18,7 +18,7 @@ run:
 build:
 	cargo build ${ARGS}
 
-build.release: build.release.x86_64 build.release.musl
+build.release: build.release.x86_64
 
 build.release.x86_64:
 	${MAKE} build ARGS=--release
