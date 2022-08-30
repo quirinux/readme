@@ -28,14 +28,14 @@ USAGE:
     readme [OPTIONS] [PATH]
 
 ARGS:
-    &lt;PATH&gt;    
+    <PATH>    
 
 OPTIONS:
-    -f, --file-type &lt;FILE_TYPE&gt;    file types to filter by in a regex pattern
+    -f, --file-type <FILE_TYPE>    file types to filter by in a regex pattern
     -h, --help                     Print help information
     -n, --no-recursive             whether or not to look for files recursively
     -s, --show-context             prints context and exit
-    -t, --template &lt;TEMPLATE&gt;      Handlebars template file
+    -t, --template <TEMPLATE>      Handlebars template file
     -V, --version                  Print version information
 
 ```
