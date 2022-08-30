@@ -10,6 +10,7 @@ ARGS :=
 TAG = v${VERSION}
 TARGET := debug
 README := ./target/${TARGET}/${BIN}
+CURRENTPATH := ${shell pwd | sed -e s/\s$$//g}
 
 run:
 	cargo run -- ${ARGS}
@@ -17,23 +18,35 @@ run:
 build:
 	cargo build ${ARGS}
 
-build.release:
-	${MAKE} build ARGS=--release TARGET=release
+buil.release: build.release.x86_64 build.release.musl
+
+build.release.x86_64:
+	${MAKE} build ARGS=--release
 	${MAKE} strip TARGET=release
+
+build.release.musl:
+	${MAKE} build ARGS="--target x86_64-unknown-linux-musl --release"
+	${MAKE} strip TARGET="x86_64-unknown-linux-musl/release"
 
 strip:
 	strip ${README}
 
 docker.build:
-	docker build -t ${DOCKER_USER}/${DOCKER_REPO}:${TAG} ${DOCKER_CONTEXT}
+	docker build -t ${DOCKER_USER}/${DOCKER_REPO}:${VERSION} ${DOCKER_CONTEXT}
 	docker tag ${DOCKER_USER}/${DOCKER_REPO}:${TAG} ${DOCKER_USER}/${DOCKER_REPO}:latest
 
 docker.push:
-	docker push ${DOCKER_USER}/${DOCKER_REPO}:${TAG}
+	docker push ${DOCKER_USER}/${DOCKER_REPO}:${VERSION}
 	docker push ${DOCKER_USER}/${DOCKER_REPO}:latest
 
 docker.login:
 	docker login --username ${DOCKER_USER} --password ${DOCKER_PASS}
+
+docker.runtest:
+	docker run --rm \
+		--volume ${CURRENTPATH}:/app:ro \
+		${DOCKER_USER}/${DOCKER_REPO}:${VERSION} \
+		readme
 
 README.md:
 	${README} --help > ./templates/HELP.txt
