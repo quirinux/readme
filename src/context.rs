@@ -19,9 +19,9 @@ use std::{
 pub struct Item {
     // > - absolute: handles the absolute file path
     absolute: PathBuf,
-    // > relative: handles the file relative path to pwd
+    // > - relative: handles the file relative path to pwd
     relative: PathBuf,
-    // > content: file content itself
+    // > - content: file content itself
     content: Vec<String>,
 }
 
