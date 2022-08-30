@@ -74,7 +74,6 @@ The following was generated using readme itself :-), check out how it is done on
 1. [examples/ruby.rb](#examples/ruby.rb)
 
 ## src/context.rs
-```
 Handlebar VM context
 Default comment regex: r"^(\s|\t)*(#|//)\s?>"
 Default embedded template [../templates/default.hbs](../templates/default.hbs)
@@ -82,16 +81,12 @@ Each matching file is registered internaly like an item as follows and all of th
 - absolute: handles the absolute file path
 relative: handles the file relative path to pwd
 content: file content itself
-```
 
 ## src/main.rs
-```
 This is the entry point
 TODO: a better error handling is fairly much appreciated showing more about templating and parsing error them rust display trait
-```
 
 ## src/readme.rs
-```
 this is where the vm is orchestrated
 Aiming having a richier templating engine some new functions were created to make readme usage easier to work with:
 ### join
@@ -110,25 +105,18 @@ Return:
 string, file content within a single string
 TODO:
 - include the file on processing context instead of raw, making it possible to be a handlebar file
-```
 
 ## examples/rust.rs
-```
 this is supposed to be a rust file with
 some nice comments in it
-```
 
 ## examples/python.py
-```
 this is supposed to be a python file with
 some nice comments in it
-```
 
 ## examples/ruby.rb
-```
 this is supposed to be a ruby file with
 some nice comments in it
-```
 
 
 
