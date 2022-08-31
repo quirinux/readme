@@ -74,22 +74,85 @@ The following was generated using readme itself :-), check out how it is done on
 1. [examples/ruby.rb](#examples/ruby.rb)
 
 ## src/context.rs
-Handlebar VM context<br />Default comment regex: r"^(\s|\t)*(#|//)\s?>"<br />Default embedded template [../templates/default.hbs](../templates/default.hbs)<br />Each matching file is registered internaly like an item as follows and all of them are made avialable on vm context:<br />- absolute: handles the absolute file path<br />- relative: handles the file relative path to pwd<br />- content: file content itself
+Handlebar VM context
+Default comment regex: r"^(\s|\t)*(#|//)\s?>"
+
+
+Default embedded template [../templates/default.hbs](../templates/default.hbs)
+
+
+Each matching file is registered internaly like an item as follows and all of them are made avialable on vm context:
+
+
+- absolute: handles the absolute file path
+- relative: handles the file relative path to pwd
+- content: file content itself
+
+
 
 ## src/main.rs
-This is the entry point<br />TODO: a better error handling is fairly much appreciated showing more about templating and parsing error them rust display trait
+This is the entry point
+
+
+TODO: a better error handling is fairly much appreciated showing more about templating and parsing error them rust display trait
 
 ## src/readme.rs
-this is where the vm is orchestrated<br />Aiming having a richier templating engine some new functions were created to make readme usage easier to work with:<br />### join<br />joins multiple string in one<br />Mandatory args:<br />- x: Veac<string>, array of strings to get joined with<br />Optional args:<br />- with: str = "\n", string used to join<br />Return:<br />- string, resulted joined string<br />### include<br />to include another file content, no parsing or process is ran against it<br />Mandatory args:<br />- path: <PathBuf>, file path to include, fails if file does not exist<br />Return:<br />- string, file content within a single string<br />TODO:<br />- include the file on processing context instead of raw, making it possible to be a handlebar file
+this is where the vm is orchestrated
+
+
+Aiming having a richier templating engine some new functions were created to make readme usage easier to work with:
+
+
+### join
+joins multiple string in one
+
+
+Mandatory args:
+- x: Veac<string>, array of strings to get joined with
+
+
+Optional args:
+- with: str = "\n", string used to join
+
+
+Return:
+- string, resulted joined string
+
+
+### include
+to include another file content, no parsing or process is ran against it
+
+
+Mandatory args:
+- path: <PathBuf>, file path to include, fails if file does not exist
+
+
+Return:
+- string, file content within a single string
+
+
+TODO:
+- include the file on processing context instead of raw, making it possible to be a handlebar file
+
+
 
 ## examples/rust.rs
-this is supposed to be a rust file with<br />some nice comments in it
+this is supposed to be a rust file with
+
+
+some nice comments in it
 
 ## examples/python.py
-this is supposed to be a python file with<br />some nice comments in it
+this is supposed to be a python file with
+
+
+some nice comments in it
 
 ## examples/ruby.rb
-this is supposed to be a ruby file with<br />some nice comments in it
+this is supposed to be a ruby file with
+
+
+some nice comments in it
 
 
 
