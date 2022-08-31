@@ -5,8 +5,10 @@ use serde::Serialize;
 use std::io::ErrorKind;
 
 // > Default comment regex: r"^(\s|\t)*(#|//)\s?>"
-const PATTERN: &str = r"^(\s|\t)*(#|//)\s?>";
+// >
+const PATTERN: &str = r"^(\s|\t)*(#|//)\s?>\s?";
 // > Default embedded template [../templates/default.hbs](../templates/default.hbs)
+// >
 const TEMPLATE: &str = std::include_str!("../templates/default.hbs");
 use std::{
     fs::File,
@@ -15,6 +17,7 @@ use std::{
 };
 
 // > Each matching file is registered internaly like an item as follows and all of them are made avialable on vm context:
+// >
 #[derive(Debug, Default, Serialize)]
 pub struct Item {
     // > - absolute: handles the absolute file path
@@ -24,7 +27,7 @@ pub struct Item {
     // > - content: file content itself
     content: Vec<String>,
 }
-
+// >
 fn new_item(absolute: PathBuf, relative: PathBuf) -> Item {
     Item {
         absolute,
@@ -50,7 +53,9 @@ impl Item {
                 _return = Some(());
                 let _comment = pattern.replace(_line.as_str(), "");
                 if _comment.len() > 0 {
-                    self.content.push(_comment[1..].to_string());
+                    self.content.push(_comment.to_string());
+                } else {
+                    self.content.push("\n".to_string());
                 }
             }
         }

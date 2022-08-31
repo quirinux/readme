@@ -1,4 +1,5 @@
 // > this is where the vm is orchestrated
+// >
 use crate::context;
 use clap::Parser;
 use handlebars::{handlebars_helper, Handlebars};
@@ -26,6 +27,7 @@ type ResultHelper = Result<String, Box<dyn error::Error>>;
 // >
 // > Return:
 // > - string, resulted joined string
+// >
 handlebars_helper!(join: |x: Vec<String>, { with: str = "\n" }| x.join(with));
 // > ### include
 // > to include another file content, no parsing or process is ran against it
@@ -38,6 +40,7 @@ handlebars_helper!(join: |x: Vec<String>, { with: str = "\n" }| x.join(with));
 // >
 // > TODO:
 // > - include the file on processing context instead of raw, making it possible to be a handlebar file
+// >
 handlebars_helper!(include: |path: PathBuf | {
     let _file = File::open(&path)?;
     let mut _reader = BufReader::new(_file);
